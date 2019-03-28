@@ -2,9 +2,10 @@
 
 using namespace std;
 
-class person{
+class Person{
 	
 	private:
+	
 		string name;
 		string gender;
 		int age;
@@ -12,6 +13,24 @@ class person{
 		bool is_alive;
 		
 	public:
+		
+		Person(){
+			setName("unknown");
+			setGender("M");
+			setRace("ugly");
+			setAge(age);
+		}
+		
+		Person(string n, string g, string r){
+			setName(n);
+			setGender(g);
+			setRace(r);
+		}
+		
+		string getStats(){
+			return "\nName: " + name + "\nRace: " + race + "\nGender: " + gender;
+		}
+		
 		
 		string getName(){ return name;}
 		string getGender(){ return gender;}
@@ -23,10 +42,16 @@ class person{
 		
 		void setGender(string g){ gender = g;}
 		
-		void setAge(int a){ age = a;}
-		
+		void setAge(int a){ 
+			if ((0>a) || (150<a)){
+				age=28;
+			}else{
+				age = a;
+			}
+		}
 		void setRace(string r){ race = r;}
 		
 		void setAlive(bool a){ is_alive = a;}
+		
 	
 };
