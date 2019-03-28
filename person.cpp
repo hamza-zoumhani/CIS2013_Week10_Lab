@@ -29,4 +29,4 @@ class person{
 		
 		void setAlive(bool a){ is_alive = a;}
 	
-}
+};
